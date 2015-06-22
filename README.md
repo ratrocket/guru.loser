@@ -2,9 +2,11 @@
 
 ## Workflow...
 
-- Get binary files `assemble` and `serve` (ADD LINK).  Put them in the project
-  `bin/` directory.  (Or you can build them with `make progs` if you have the
-  [Go programming language](http://golang.org) installed.)
+- Get binary files `assemble` and `serve` (from:
+  https://github.com/ratrocket/guru.loser/releases/tag/v0.1.0.  If there's a
+  newer release, use its tag.).  Put them in the project `bin/` directory.  (Or
+  you can build them with `make progs` if you have the [Go programming
+  language](http://golang.org) installed.)
 
 - Modify main.tmpl (html files are generated based on this).
 
