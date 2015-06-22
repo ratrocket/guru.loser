@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+<!-- Main grid stuff: http://purecss.io/grids/ -->
+
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-min.css&pure/0.6.0/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-min.css&pure/0.6.0/grids-responsive-min.css">
+<!--<![endif]-->
+
+<!-- grid responsiveness -->
+
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+<!--<![endif]-->
+
+<link rel="stylesheet" href="{{.AssetPrefix}}assets/stylesheets/magnific-popup.css">
+
+<style>
+.l-box {
+    padding: 1px;
+}
+
+.popup {
+    position: relative;
+    background: #FFF;
+    padding: 15px;
+    /* 
+    width: auto;
+    max-width: 500px;
+    margin: 20px auto;
+     */
+}
+</style>
+
+<title>
+    LoserGuru&trade;, c/o Sub Pop Records&trade;
+</title>
+
+</head>
+
+<body>
+<div class="pure-g" id="container">
+
+    <div class="pure-u-1">
+        <header>
+            <h1>Your Guide to Our Images</h1>
+        </header>
+    </div>
+
+    <section id="main_content">
+
+        <div class="pure-u-1">
+            <p>
+            &Lscr;&order;&Sacute;&Ecy;&reals;
+            &compfn;
+            &gscr;&mho;&Rscr;&cup;
+            </p>
+            <p>
+            <a href="/" id="home-link">
+                Home
+            </a>
+            </p>
+            <p>
+            <a href="/about" id"about-link">
+                About
+            </a>
+            </p>
+        </div>
+
+        {{range .Rs}}
+        {{$ppid := printf "%s%s" "popup-" .BareNum}}
+        <div class="pure-u-1-2 pure-u-md-1-3 pure-u-lg-1-6 pure-u-xl-1-8">
+            <div class="l-box">
+                <a href="#{{$ppid}}" class="open-popup-link" id="a-{{$ppid}}" data-num="{{.BareNum}}">
+                    <img class="pure-img" src="{{.ImgMd}}">
+                </a>
+            </div>
+        </div>
+
+        <div id="{{$ppid}}" class="popup mfp-hide">
+            <table>
+                <tr>
+                    <td colspan="1" style="width: 33%;">
+                        <img class="pure-img" src="{{.ImgMd}}">
+                    </td>
+                    <td colspan="2" style="width: 67%;">
+
+                        <h1>{{.ArtistName}} <em>&laquo;{{.ReleaseName}}&raquo;</em></h1>
+                        <p>
+                        {{.Desc}}
+                        </p>
+                        <p>
+                        &forall;
+                        <a href="{{.ArtistLink}}">
+                            Artist Info
+                        </a>
+                        &exist;
+                        <a href="{{.SiteLink}}">
+                            Release Info
+                        </a>
+                        &notin;
+                        <a href="{{.ShopLink}}">
+                            Buy Release
+                        </a>
+                        &boxbox;
+                        <!--
+                        &Square;
+                        &there4;
+                        -->
+                    </td>
+                </tr>
+            </table>
+        </div>
+        {{end}}
+
+    </section>
+
+    <footer>
+    </footer>
+
+</div>
+
+<script src="{{.AssetPrefix}}assets/javascripts/zepto.min.js"></script>
+<script src="{{.AssetPrefix}}assets/javascripts/jquery.magnific-popup.min.js"></script>
+<script src="{{.AssetPrefix}}assets/javascripts/zepto.history.js"></script>
+<script src="{{.AssetPrefix}}assets/javascripts/loser.guru.js"></script>
+<script>
+$(document).ready(function() {
+    $('.open-popup-link').magnificPopup({
+        type:'inline',
+        midClick: true
+    });
+
+    $('.open-popup-link').on('click', function() {
+        // Isn't there a better way to access the "data"?
+        var num = $(this).attr('data-num');
+        // History.pushState(data, title, url)
+        History.pushState(null, "loser.guru/"+num, "/"+num);
+    });
+
+    $('#home-link').on('click', function() {
+        History.pushState(null, "loser.guru", "/");
+    });
+
+    {{if .ProcessingInterior}}
+    // This will pop up a popup on "load"
+    // ex.: $("#a-popup-910").click();
+    $("{{.CurrentPopupAnchor}}").click();
+    {{end}}
+});
+</script>
+</body>
+</html>

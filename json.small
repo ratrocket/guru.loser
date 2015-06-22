@@ -1,0 +1,40 @@
+[
+  {
+      "database_id": 1263,
+      "artist_name": "Obits",
+      "artist_slug": "obits",
+      "release_name": "I Blame You",
+      "release_slug": "obits/i_blame_you",
+      "catalog_number": "70785",
+      "description": "Can, a band and producer.  Nigel Godrich (Radiohead, Beck, Travis) unleashes a series of blips and the latter's crisp baritone has generally blended in with the abrasively dynamic song.",
+      "bare_sp_num": "785",
+      "cat_with_sprefix": "SP785",
+      "release_date_numeric": "2009-03-23",
+      "release_date_string": "March 23, 2009",
+      "artist_link": "https://www.subpop.com/artists/obits",
+      "site_link": "https://www.subpop.com/releases/obits/i_blame_you",
+      "shop_link": "https://megamart.subpop.com/releases/obits/i_blame_you",
+      "img_sm": "785-sm.jpg",
+      "img_md": "785-md.jpg",
+      "img_lg": "785-lg.jpg"
+  },
+  {
+      "database_id": 522,
+      "artist_name": "Beachwood Sparks",
+      "artist_slug": "beachwood_sparks",
+      "release_name": "Once We Were Trees",
+      "release_slug": "beachwood_sparks/once_we_were_trees",
+      "catalog_number": "70545",
+      "description": "The red-headed copier of the term.  The hum of these elements segue nicely into the latter-day Sparks snare of hitting a peak or reaching a low.  As a whole, Cross is certainly wry, theatrical, chaotic, ironic, and mournful, often all at once: his passion with every breath, his studies of European revolution.",
+      "bare_sp_num": "545",
+      "cat_with_sprefix": "SP545",
+      "release_date_numeric": "2001-10-08",
+      "release_date_string": "October 8, 2001",
+      "artist_link": "https://www.subpop.com/artists/beachwood_sparks",
+      "site_link": "https://www.subpop.com/releases/beachwood_sparks/once_we_were_trees",
+      "shop_link": "https://megamart.subpop.com/releases/beachwood_sparks/once_we_were_trees",
+      "img_sm": "545-sm.jpg",
+      "img_md": "545-md.jpg",
+      "img_lg": "545-lg.jpg"
+  }
+]
