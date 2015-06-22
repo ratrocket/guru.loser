@@ -1,5 +1,10 @@
 # guru.loser
 
+## Update
+
+The site is now running on [Jekyll](http://jekyllrb.com) so a lot of the
+following is outdated!
+
 ## Workflow...
 
 - Get binary files `assemble` and `serve` (from:
