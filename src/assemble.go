@@ -36,6 +36,7 @@ type ViewData struct{
 	Rs Releases
 	ProcessingInterior bool
 	CurrentPopupAnchor  string
+	//CurrentBareNum string
 	AssetPrefix string
 	ImagePrefix string
 }
@@ -87,12 +88,15 @@ func main() {
 	// Set for writing stuff on "interior" (non-index) pages
 	vd.ProcessingInterior = true
 
+	if err := os.Chdir("_posts"); err != nil {
+		log.Fatal(err)
+	}
+
 	for i := 0; i < len(vd.Rs); i++ {
 		vd.CurrentPopupAnchor = fmt.Sprintf("#a-popup-%s", vd.Rs[i].BareNum)
+		//vd.CurrentBareNum = vd.Rs[i].BareNum
 
-		//interiorFile := fmt.Sprintf("%s.html", vd.Rs[i].BareNum)
-		// Try w/o extension
-		interiorFile := fmt.Sprintf("%s", vd.Rs[i].BareNum)
+		interiorFile := fmt.Sprintf("2015-06-21-%s.html", vd.Rs[i].BareNum)
 		out, err := os.Create(interiorFile)
 		if err != nil {
 			log.Fatal(err)
@@ -105,4 +109,5 @@ func main() {
 
 	}
 
+	// Note that we're in the _posts directory here.
 }

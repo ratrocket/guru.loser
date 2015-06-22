@@ -1,3 +1,5 @@
+INDEX=index.html
+
 all:
 
 progs: assemble serve
@@ -10,15 +12,15 @@ serve: src/serve.go
 
 # For local testing.
 localhost:
-	rm -f index.html
-	./bin/assemble > index.html
+	rm -f $(INDEX)
+	./bin/assemble > $(INDEX)
 
 # For a "release"; trailing slashes are necessary.
 guru.loser:
-	rm -f index.html
+	rm -f $(INDEX)
 	./bin/assemble -img http://d1nubnl3w13qxh.cloudfront.net/ \
 		-asst http://d1nubnl3w13qxh.cloudfront.net/ \
-		> index.html
+		> $(INDEX)
 
 clean:
 	rm -f bin/{assemble,serve}
