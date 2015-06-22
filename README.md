@@ -76,3 +76,15 @@ Just execute `make guru.loser`.
 
 - Been wanting to check this this instead of (or in addition to) Google
   Analytics: http://get.gaug.es/
+
+## Javascript/CSS packages used:
+
+- browserstate/history.js: https://github.com/browserstate/history.js
+
+- Zepto.js: the aerogel-weight jQuery-compatible JavaScript library:
+  http://zeptojs.com/
+
+- Magnific Popup: Responsive jQuery (or Zepto) Lightbox Plugin:
+  http://dimsemenov.com/plugins/magnific-popup/
+
+- Grids – Pure: http://purecss.io/grids/
